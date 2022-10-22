@@ -1,0 +1,17 @@
+- name: "instalamos isc-dhcp-server y sed"
+  apt:
+    pkg: isc-dhcp-server
+
+- replace:
+    path: /etc/default/isc-dhcp-server
+    regexp: 'INTERFACESv4=""'
+    replace: 'INTERFACESv4="enp7s0"'
+
+- name: "copiando configuración dhcp al router"
+  template:
+    src: dhcpd.conf
+    dest: /etc/dhcp/dhcpd.conf
+    owner: usuario
+    group: usuario
+    mode: 0644
+  notify: restart isc-dhcp-server

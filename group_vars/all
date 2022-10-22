@@ -1,0 +1,17 @@
+bd_name: wordpress_bd
+bd_user: wordpress_user
+bd_pass: asdasd
+
+
+#variables del dhcp roter
+ip_net_router: 10.0.0.0
+ip_router: 10.0.0.10
+mascara: 255.255.255.0
+rango: 10.0.0.100 10.0.0.150
+tiempo_por_defecto: 700
+tiempo_max: 3600
+dns_google: 8.8.8.8
+
+#variables de reserva del servidor web
+mac_servidor_web: 52:54:00:94:d7:7b
+ip_servidor_web: 10.0.0.11
